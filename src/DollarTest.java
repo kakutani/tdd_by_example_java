@@ -9,5 +9,13 @@ public class DollarTest extends TestCase {
 		product = five.times(3);
 		assertEquals(15, product.amount);
 	}
+	
+	public void testEquality() {
+		assertTrue(new Dollar(5).
+				equals(new Dollar(5)));
+		assertFalse(new Dollar(5).
+				equals(new Dollar(6)));
+	}
+
 
 }
