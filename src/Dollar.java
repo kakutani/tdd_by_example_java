@@ -4,9 +4,4 @@ public class Dollar extends Money {
 		super(amount, currency);
 	}
 	
-	String currency() {
-		return currency;
-	}
-	
-
 }
