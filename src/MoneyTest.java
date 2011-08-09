@@ -1,7 +1,7 @@
 import junit.framework.TestCase;
 
 
-public class DollarTest extends TestCase {
+public class MoneyTest extends TestCase {
 	public void testMulitplication() {
 		Money five = Money.dollar(5);
 		assertEquals(Money.dollar(10), five.times(2));
