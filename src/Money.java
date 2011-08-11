@@ -1,4 +1,4 @@
-class Money {
+class Money implements Expression {
 	static Money dollar(int amount) {
 		return new Money(amount, "USD");
 	}
@@ -33,7 +33,7 @@ class Money {
 		return amount + " " + currency;
 	}
 
-	public Money plus(Money addend) {
+	public Expression plus(Money addend) {
 		return new Money(amount + addend.amount, currency);
 	}
 }
