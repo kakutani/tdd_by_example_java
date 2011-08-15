@@ -34,4 +34,11 @@ public class MoneyTest extends TestCase {
 		Money result = bank.reduce(sum, "USD");
 		assertEquals(Money.dollar(7), result);
 	}
+	
+	public void testReduceMoney() {
+		Bank bank = new Bank();
+		Money result = bank.reduce(Money.dollar(1), "USD");
+		assertEquals(Money.dollar(1), result);
+	}
+	
 }
