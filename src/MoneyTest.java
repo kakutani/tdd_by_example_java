@@ -53,6 +53,21 @@ public class MoneyTest extends TestCase {
 	}
 	
 	public void testArrayEquals() {
-		assertEquals(new Object[]{ "abc"}, new Object[]{ "abc" });
+		assertFalse(new Object[]{ "abc"}.equals(new Object[]{ "abc" }));
 	}
+	
+	public void testMixedAdditon() {
+		Money fiveBucks = Money.dollar(5);
+		Money tenFrancs = Money.franc(10);
+		Bank bank = new Bank();
+		bank.addRate("CDF", "USD", 2);
+		Expression sum = fiveBucks.plus(tenFrancs);
+		Money result = bank.reduce(sum, "USD");
+		assertEquals(Money.dollar(10), result);
+		
+		
+		
+	}
+	
+	
 }
