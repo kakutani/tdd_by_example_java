@@ -41,6 +41,10 @@ public class MoneyTest extends TestCase {
 		assertEquals(Money.dollar(1), result);
 	}
 	
+	public void testIdentityRate() {
+		assertEquals(1, new Bank().rate("USD", "USD"));
+	}
+	
 	public void testReduceMoneyDifferentCurrency() {
 		Bank bank = new Bank();
 		bank.addRate("CHF", "USD", 2);
